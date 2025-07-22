@@ -1,6 +1,6 @@
 # Bulk Email Sender
 
-A React + TypeScript application for sending bulk emails using Nodemailer with Gmail integration.
+A React + TypeScript application for sending bulk emails using Nodemailer with Gmail integration. **Now deployable to Vercel!**
 
 ## Features
 
@@ -11,6 +11,13 @@ A React + TypeScript application for sending bulk emails using Nodemailer with G
 - 📊 Detailed sending results and statistics
 - 🎨 Modern, responsive UI
 - 🔒 Secure Gmail integration with app passwords
+- ☁️ **Ready for Vercel deployment**
+
+## Quick Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/bulk-email-sender)
+
+For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## Prerequisites
 
@@ -110,6 +117,10 @@ Check server health status.
 
 ```
 bulk-email-sender/
+├── api/                    # Serverless functions (Vercel)
+│   ├── index.ts           # Main API handler
+│   ├── package.json       # API dependencies
+│   └── tsconfig.json      # TypeScript config
 ├── client/                 # React TypeScript frontend
 │   ├── public/
 │   ├── src/
@@ -117,13 +128,15 @@ bulk-email-sender/
 │   │   ├── App.css        # Styles
 │   │   └── index.tsx      # React entry point
 │   └── package.json
-├── server/                 # Express TypeScript backend
+├── server/                 # Express TypeScript backend (local dev)
 │   ├── src/
 │   │   └── index.ts       # Server with email functionality
 │   ├── .env               # Environment variables
 │   └── package.json
+├── vercel.json            # Vercel deployment configuration
+├── .env.example           # Environment variables template
+├── DEPLOYMENT.md          # Vercel deployment guide
 └── package.json           # Root package.json
-
 ```
 
 ## Features Explained
@@ -175,10 +188,30 @@ bulk-email-sender/
 3. Styling changes go in `client/src/App.css`
 
 ### Building for Production
+
+**Local Build:**
 ```bash
 cd client && npm run build
 cd ../server && npm run build
 ```
+
+**Vercel Deployment:**
+```bash
+vercel --prod
+```
+
+## Deployment Options
+
+### 1. Vercel (Recommended)
+- Serverless deployment
+- Automatic HTTPS
+- Global CDN
+- See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions
+
+### 2. Traditional Hosting
+- Use the `server/` directory for Express.js deployment
+- Build the client and serve static files
+- Configure environment variables on your hosting platform
 
 ## License
 

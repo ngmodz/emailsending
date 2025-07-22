@@ -2,10 +2,12 @@
 node_modules/
 client/node_modules/
 server/node_modules/
+api/node_modules/
 
 # Production builds
 client/build/
 server/dist/
+api/dist/
 
 # Environment variables
 server/.env
@@ -96,3 +98,6 @@ temp/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Vercel
+.vercel

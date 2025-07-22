@@ -184,7 +184,7 @@ const App: React.FC = () => {
         isHtml: formData.isHtml
       });
 
-      const response = await axios.post<SendEmailResponse>('/api/send-bulk-email', {
+      const response = await axios.post<SendEmailResponse>(`${process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5000'}/api/send-bulk-email`, {
         to: emails,
         subject: formData.subject,
         message: formData.message,
@@ -211,7 +211,7 @@ const App: React.FC = () => {
     setTestLoading(true);
     try {
       console.log('Sending test email...'); // Debug log
-      const response = await axios.post('/api/test-email');
+      const response = await axios.post(`${process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5000'}/api/test-email`);
       console.log('Test email response:', response.data); // Debug log
       alert('Test email sent successfully!');
     } catch (error) {

@@ -37,9 +37,18 @@ A React + TypeScript application for sending bulk emails using Nodemailer with G
 
 ## Configuration
 
-The Gmail credentials are already configured in `server/.env`:
-- EMAIL_USER: freefiretournaments03@gmail.com
-- EMAIL_APP_PASSWORD: ymnv vdtu qydg guio
+Create a `server/.env` file with your Gmail credentials:
+```env
+# Gmail credentials
+EMAIL_USER=your-email@gmail.com
+EMAIL_APP_PASSWORD=your-app-password
+
+# Server configuration
+PORT=5000
+NODE_ENV=development
+```
+
+**Important:** Never commit your actual credentials to version control. The `.env` file is already included in `.gitignore`.
 
 ## Running the Application
 
